@@ -1,27 +1,17 @@
 
-"""2. Реализовать функцию, принимающую несколько параметров, описывающих данные пользователя:
- имя, фамилия, год рождения, город проживания, email, телефон.
- Функция должна принимать параметры как именованные аргументы. Реализовать вывод данных о пользователе одной строкой
+"""3. Реализовать функцию my_func(), которая принимает три позиционных аргумента,
+ и возвращает сумму наибольших двух аргументов.
  """
 
+def my_func(arg1, arg2, arg3):
+    items = [arg1, arg2, arg3]
+    items.remove(min(items))
 
-def main(**kwargs):
-     return f"{kwargs['first_name']} {kwargs['last_name']} ({kwargs['year']}), {kwargs['city']}, {kwargs['phone']}, {kwargs['email']}"
+    return sum(items)
 
+a, b, c = int(input("Введите первое число: ")), int(input("Введите второе число: ")), int(input("Введите третье число: "))
 
-user_name = input("Имя: ")
-user_last_name = input("Фамилия: ")
-user_year = int(input("Год рождения: "))
-user_city = input("Город: ")
-user_email = input("email: ")
-user_phone = input("Номер телефона: ")
-
-print(
-    main(first_name=user_name, last_name=user_last_name,
-         year=user_year, city=user_city, email=user_email,
-         phone=user_phone)
-)
-
+print(my_func(a, b, c))
 
 
 
